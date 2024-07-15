@@ -43,6 +43,12 @@ export PATH="$HOME/go/bin:$GOPATH/bin:$PATH"
 ollama-copilot
 ```
 
+## Makefile
+```bash
+cd linux
+sudo make USER=$(whoami)
+```
+
 ## Configure IDE
 
 ### Neovim

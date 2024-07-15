@@ -1,0 +1,12 @@
+[Unit]
+Description=Ollama Copilot Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/ollama-copilot
+Restart=on-failure
+User={{USER}}
+
+[Install]
+WantedBy=multi-user.target
