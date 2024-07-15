@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 
-	"github.com/bernardo-bruning/ollama-copilot/internal"
+	"github.com/JamsMendez/ollama-copilot/internal"
 )
 
 var (
@@ -13,7 +13,7 @@ var (
 	proxyPortSSL = flag.String("proxy-port-ssl", ":11435", "Proxy port to listen on")
 	cert         = flag.String("cert", "", "Certificate file path *.crt")
 	key          = flag.String("key", "", "Key file path *.key")
-	model        = flag.String("model", "codellama:code", "LLM model to use")
+	model        = flag.String("model", "codellama:7b-code", "LLM model to use")
 	numPredict   = flag.Int("num-predict", 50, "Number of predictions to return")
 	templateStr  = flag.String("template", "<PRE> {{.Prefix}} <SUF> {{.Suffix}} <MID>", "Fill-in-middle template to apply in prompt")
 )
