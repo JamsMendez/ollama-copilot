@@ -10,7 +10,7 @@ install:
 enable-systemd: $(SERVICE_TEMPLATE)
 	@echo "Create unit sytemd file"
 	@sed "s/{{USER}}/$(USER)/g" $(SERVICE_TEMPLATE) > $(UNIT_SYSTEM_FILE)
-	@cp ollama-copilot.service /etc/systemd/system/ollama-copilot.service
+	@cp  $(UNIT_SYSTEM_FILE) /etc/systemd/system/ollama-copilot.service
 	@rm $(UNIT_SYSTEM_FILE)
 	@echo "Move unit sytemd file to /etc/systemd/system"
 	@systemctl daemon-reload
