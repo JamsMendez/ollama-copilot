@@ -19,31 +19,11 @@ Or follow the [manual install](https://github.com/ollama/ollama/blob/main/docs/l
 To use the default model expected by `ollama-copilot`:
 
 ```bash
-ollama pull codellama:code
-```
-
-### ollama-copilot
-
-```bash
-go install github.com/bernardo-bruning/ollama-copilot@latest
-```
-
-### Running
-
-Ensure your `$PATH` includes `$HOME/go/bin` or `$GOPATH/bin`.
-For example, in `~/.bashrc` or `~/.zshrc`:
-
-```bash
-export PATH="$HOME/go/bin:$GOPATH/bin:$PATH"
-```
-
-```bash
-ollama-copilot
+ollama pull codellama:7b-code
 ```
 
 ## Makefile
 ```bash
-cd linux
 sudo make USER=$(whoami)
 ```
 
