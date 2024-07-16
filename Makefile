@@ -1,4 +1,5 @@
-SERVICE_TEMPLATE=ollama-copilot.service.tmpl
+SERVICE_TEMPLATE=linux/ollama-copilot.service.tmpl
+UNIT_SYSTEM_FILE=linux/ollama-copilot.service
 
 build:
 	go build -o ollama-copilot main.go
@@ -8,9 +9,9 @@ install:
 
 enable-systemd: $(SERVICE_TEMPLATE)
 	@echo "Create unit sytemd file"
-	@sed "s/{{USER}}/$(USER)/g" $(SERVICE_TEMPLATE) > ollama-copilot.service
+	@sed "s/{{USER}}/$(USER)/g" $(SERVICE_TEMPLATE) > $(UNIT_SYSTEM_FILE)
 	@cp ollama-copilot.service /etc/systemd/system/ollama-copilot.service
-	@rm ollama-copilot.service
+	@rm $(UNIT_SYSTEM_FILE)
 	@echo "Move unit sytemd file to /etc/systemd/system"
 	@systemctl daemon-reload
 	@systemctl enable ollama-copilot.service
