@@ -4,7 +4,7 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/usr/local/bin/ollama-copilot -model=codellama:13b
+ExecStart=/usr/local/bin/ollama-copilot -model=codellama:7b-code
 Restart=on-failure
 User={{USER}}
 
