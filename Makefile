@@ -4,7 +4,7 @@ UNIT_SYSTEM_FILE=linux/ollama-copilot.service
 build:
 	go build -o ollama-copilot main.go
 
-install:
+bin:
 	mv ollama-copilot /usr/local/bin
 
 enable-systemd: $(SERVICE_TEMPLATE)
@@ -24,4 +24,6 @@ status-systemd:
 health-check:
 	curl -s http://localhost:11437/health
 
-.PHONY: build install enable-systemd status-systemd health-check
+install: build bin enable-systemd status-systemd health-check
+
+.PHONY: install

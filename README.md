@@ -24,7 +24,7 @@ ollama pull codellama:7b-code
 
 ## Makefile
 ```bash
-sudo make USER=$(whoami)
+sudo make USER=$(whoami) install
 ```
 
 ## Configure IDE
